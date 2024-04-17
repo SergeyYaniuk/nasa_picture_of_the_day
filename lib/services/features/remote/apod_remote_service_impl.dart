@@ -8,7 +8,7 @@ class ApodRemoteServiceImpl implements ApodRemoteService {
   ApodRemoteServiceImpl({required this.dio});
 
   @override
-  Future<RemoteApod> getApod() async {
+  Future<RemoteApod> fetchApod() async {
     final response = await dio.get(
       "planetary/apod"
     );

@@ -3,7 +3,7 @@ import 'package:nasa_picture_of_the_day/services/features/remote/apod_remote_ser
 
 class FakeApodRemoteService implements ApodRemoteService {
   @override
-  Future<RemoteApod> getApod() async {
+  Future<RemoteApod> fetchApod() async {
     await Future.delayed(const Duration(seconds: 1));
     return RemoteApod(
         date: "2024-04-16",
