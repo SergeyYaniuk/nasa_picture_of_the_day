@@ -14,9 +14,6 @@ class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
     AutoRoute(path: HomeScreen.path, page: HomeRoute.page, initial: true),
-    AutoRoute(
-      path: PictureScreen.path,
-      page: PictureRoute.page,
-    ),
+    AutoRoute(path: PictureScreen.path, page: PictureRoute.page),
   ];
 }

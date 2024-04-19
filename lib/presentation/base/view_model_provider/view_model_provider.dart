@@ -1,0 +1,34 @@
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../entity/screen/screen.dart';
+import '../../entity/screen/screen_state.dart';
+import 'base_view_model.dart';
+
+class ViewModelProvider<VIEW_MODEL extends BaseViewModel<Screen, SCREEN_STATE>,
+SCREEN_STATE extends ScreenState> extends InheritedWidget {
+  final AutoDisposeStateNotifierProvider<VIEW_MODEL, SCREEN_STATE> provider;
+
+  const ViewModelProvider({
+    super.key,
+    required super.child,
+    required this.provider,
+  });
+
+  static ViewModelProvider<VIEW_MODEL, SCREEN_STATE> of<
+  VIEW_MODEL extends BaseViewModel<Screen, SCREEN_STATE>,
+  SCREEN_STATE extends ScreenState>(BuildContext context) {
+    final ViewModelProvider<VIEW_MODEL, SCREEN_STATE>? result =
+    context.dependOnInheritedWidgetOfExactType<
+        ViewModelProvider<VIEW_MODEL, SCREEN_STATE>>();
+    assert(result != null,
+    'No View Model Provider of type $VIEW_MODEL found in context');
+    return result!;
+  }
+
+  @override
+  bool updateShouldNotify(covariant ViewModelProvider oldWidget) {
+    return oldWidget.provider != provider;
+  }
+}

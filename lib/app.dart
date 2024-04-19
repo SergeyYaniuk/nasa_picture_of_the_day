@@ -7,7 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_displaymode/flutter_displaymode.dart';
 import 'package:get_it/get_it.dart';
+import 'package:nasa_picture_of_the_day/domain/di/domain_module.dart';
+import 'package:nasa_picture_of_the_day/interactor/di/interactor_module.dart';
+import 'package:nasa_picture_of_the_day/navigation/di/navigation_module.dart';
+import 'package:nasa_picture_of_the_day/presentation/di/presentation_module.dart';
+import 'package:nasa_picture_of_the_day/presentation/intl/translation/translation_loader.dart';
 import 'package:nasa_picture_of_the_day/presentation/nasa_picture_app.dart';
+import 'package:nasa_picture_of_the_day/repository/di/repository_module.dart';
+import 'package:nasa_picture_of_the_day/services/di/service_module.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'foundation/logger/logger.dart';
@@ -17,9 +24,10 @@ void startApp() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: const [Locale("en", "US"), Locale("ukr", "UA")],
+      supportedLocales: const [Locale("en", "US"), Locale("uk", "UA")],
       path: "assets/translations",
       fallbackLocale: const Locale("en", "US"),
+      assetLoader: const CodegenLoader(),
       child: NasaPictureApp(),
     ),
   );
@@ -58,11 +66,11 @@ Future _initSharedPreferences() async {
 
 void _initialiseGetIt() {
   log.d("Initializing dependencies...");
-  // GetIt.instance
-  //   ..serviceModule()
-  //   ..repositoryModule()
-  //   ..domainModule()
-  //   ..interactorModule()
-  //   ..presentationModule()
-  //   ..navigationModule();
+  GetIt.instance
+    ..serviceModule()
+    ..repositoryModule()
+    ..domainModule()
+    ..interactorModule()
+    ..presentationModule()
+    ..navigationModule();
 }
