@@ -20,14 +20,8 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
             path: PictureScreen.path,
             page: PictureRoute.page,
-            transitionsBuilder: TransitionsBuilders.fadeIn, durationInMilliseconds: 350)
+            transitionsBuilder: TransitionsBuilders.fadeIn,
+            durationInMilliseconds: 350
+        )
       ];
-
-  Widget _customTransition(BuildContext context, Animation<double> animation,
-      Animation<double> secondaryAnimation, Widget child) {
-    return FadeTransition(
-      opacity: animation.drive(CurveTween(curve: Curves.easeIn)), // Adjust curve as needed
-      child: child// Set the desired duration here
-    );
-  }
 }

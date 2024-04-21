@@ -1,19 +1,29 @@
-# nasa_picture_of_the_day
+## (Flutter project for a test assignment.)
 
-A new Flutter project.
+Main task: Display NASA's Astronomy Picture of the Day.
 
-## Getting Started
+The application consists of two screens:
 
-This project is a starting point for a Flutter application.
+Main screen: Displays the image and title.
+Second screen: Displays the image in full screen.
+Fade animation between screens.
 
-A few resources to get you started if this is your first Flutter project:
+The project was developed using the MVVM architectural pattern and the following technologies:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+AutoRoute
+DIO
+EasyLocalization
+Riverpod
+Freezed
+GetIt
+And others
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Due to time constraints, there is still much to improve in the project, starting with data manipulation, 
+adding mappers, better error handling, widget reuse, and so on.
 
-## (to run code use this)
+The project also needs to be configured for native Android and iOS branches by adding flavors to native code.
+
+To run the project on the web, use the following script:
+
+```bash
 flutter run -d chrome --web-renderer html
