@@ -1,5 +1,4 @@
 
-import 'package:nasa_picture_of_the_day/domain/entity/features/apod.dart';
 import 'package:nasa_picture_of_the_day/presentation/entity/intent/intent.dart';
 
 sealed class PictureScreenIntent extends BaseIntent {

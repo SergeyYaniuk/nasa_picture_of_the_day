@@ -3,7 +3,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:nasa_picture_of_the_day/foundation/extensions/object_ext.dart';
 import 'package:nasa_picture_of_the_day/presentation/destinations/home/widgets/home_page_body.dart';
 
 import '../../base/exceptions/unhandled_effect_exception.dart';
